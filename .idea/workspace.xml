@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e974a575-3173-45c6-9281-c09ac1c1945b" name="Default Changelist" comment="" />
+    <list default="true" id="e974a575-3173-45c6-9281-c09ac1c1945b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/stocastic oscillator-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/stocastic oscillator-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stocastic oscillator.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/stocastic oscillator.ipynb" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,12 +99,12 @@
       <updated>1569030880273</updated>
       <workItem from="1569030883269" duration="328000" />
       <workItem from="1569079178428" duration="77000" />
-      <workItem from="1569079486463" duration="2621000" />
+      <workItem from="1569079486463" duration="3660000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3026000" />
+    <option name="totallyTimeSpent" value="4065000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1519" height="977" extended-state="6" />
