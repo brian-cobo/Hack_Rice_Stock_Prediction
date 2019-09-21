@@ -113,5 +113,5 @@ if __name__ == "__main__":
     print('Starting Web Scraper')
     search_url = "https://www.ibtimes.com/search/site/tsla"
     scraper = WebScraper()
-    scraper.find_articles_from_search_URL(search_url, numPages=2)
+    scraper.find_articles_from_search_URL(search_url, numPages=37)
     print('Finished Web Scraper')
