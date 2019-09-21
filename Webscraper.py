@@ -109,7 +109,7 @@ class WebScraper:
                                  value['Article']])
 
 
-if __name__ == "__main__":
+def run_webscraper_program():
     print('Starting Web Scraper')
     search_url = "https://www.ibtimes.com/search/site/tsla"
     scraper = WebScraper()
