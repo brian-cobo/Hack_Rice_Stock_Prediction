@@ -6,6 +6,34 @@ import re
 
 from bs4 import BeautifulSoup
 
+# main url for sec page 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001318605&type=10-Q&dateb=&owner=exclude&count=100'
+tsla_quarterly_reports = ['https://www.sec.gov/Archives/edgar/data/1318605/000156459019026445/tsla-10q_20190630.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000156459019013462/tsla-10q_20190331.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000156459018026353/tsla-10q_20180930.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000156459018011086/tsla-10q_20180331.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000156459017021343/tsla-10q_20170930.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000156459017015705/tsla-10q_20170630.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000156459017009968/tsla-10q_20170331.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000156459016026820/tsla-10q_20160930.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000156459016023024/tsla-10q_20160630.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000156459016018886/tsla-10q_20160331.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000156459015009741/tsla-10q_20150930.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000156459015006666/tsla-10q_20150630.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000156459015003789/tsla-10q_20150331.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000119312514403635/d812482d10q.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000119312514303175/d766922d10q.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000119312514192606/d715897d10q.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000119312513435480/d588506d10q.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000119312513327916/d549636d10q.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000119312513212354/d511008d10q.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000119312512457610/d410318d10q.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000119312512332138/d364775d10q.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000119312512225825/d325967d10q.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000119312511308489/d226201d10q.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000119312511221497/d10q.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000119312511139677/d10q.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000119312510259068/d10q.htm',
+           'https://www.sec.gov/Archives/edgar/data/1318605/000119312510188792/d10q.htm']
 
 class WebScraper:
     def find_title_from_article(self, soup):
@@ -75,7 +103,11 @@ class WebScraper:
                     URL = search_URL
                 page = requests.get(URL)
                 soup = BeautifulSoup(page.content, 'html.parser')
+                print(soup)
+                exit(0)
                 links = soup.findAll('a', attrs={'href': re.compile("^https://")})
+                print(links)
+                exit(0)
                 for link in links:
                     newLink = link.get('href')
                     if ('twitter.com' not in newLink and
@@ -111,7 +143,10 @@ class WebScraper:
 
 def run_webscraper_program():
     print('Starting Web Scraper')
-    search_url = "https://www.ibtimes.com/search/site/tsla"
+    #search_url = "https://www.ibtimes.com/search/site/tsla"
+    search_url = 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001318605&type=10-Q&dateb=&owner=exclude&count=100'
     scraper = WebScraper()
-    scraper.find_articles_from_search_URL(search_url, numPages=37)
+    scraper.find_articles_from_search_URL(search_url, numPages=1)
     print('Finished Web Scraper')
+
+run_webscraper_program()
