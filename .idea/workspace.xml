@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e974a575-3173-45c6-9281-c09ac1c1945b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/NeuralNetwork.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Load_MasterDictionary.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoughranMcDonald_MasterDictionary_2018.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuarterlyReports/TSLA_Quarterly_Reports.csv" beforeDir="false" afterPath="$PROJECT_DIR$/QuarterlyReports/TSLA_Quarterly_Reports.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TrainingModel.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/TrainingModel.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Webscraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Webscraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stochastic_Oscillator_Final.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Stochastic_Oscillator_Final.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,6 +74,7 @@
         <option value="$PROJECT_DIR$/Ngram_Analysis.ipynb" />
         <option value="$PROJECT_DIR$/Sentiment_Analyzer.py" />
         <option value="$PROJECT_DIR$/Webscraper.py" />
+        <option value="$PROJECT_DIR$/NeuralNetwork.py" />
       </list>
     </option>
   </component>
@@ -146,7 +144,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.NeuralNetwork">
+    <configuration name="NeuralNetwork" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Hack_Rice_Stock_Prediction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NeuralNetwork.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Webscraper" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Hack_Rice_Stock_Prediction" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -171,6 +191,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.NeuralNetwork" />
         <item itemvalue="Python.Webscraper" />
       </list>
     </recent_temporary>
@@ -190,15 +211,16 @@
       <workItem from="1569077334309" duration="1957000" />
       <workItem from="1569084857416" duration="3100000" />
       <workItem from="1569111942785" duration="6656000" />
-      <workItem from="1569133594406" duration="3140000" />
+      <workItem from="1569133594406" duration="4684000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21278000" />
+    <option name="totallyTimeSpent" value="22822000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="724" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22778675" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -228,8 +250,20 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NeuralNetwork.py</url>
+          <line>2</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Hack_Rice_Stock_Prediction$Webscraper.coverage" NAME="Webscraper Coverage Results" MODIFIED="1569139211568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Hack_Rice_Stock_Prediction$Webscraper.coverage" NAME="Webscraper Coverage Results" MODIFIED="1569154556625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Hack_Rice_Stock_Prediction$NeuralNetwork.coverage" NAME="NeuralNetwork Coverage Results" MODIFIED="1569154576856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Articles/Article_Info.csv">
@@ -277,6 +311,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Stochastic_Oscillator.ipynb">
       <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NeuralNetwork.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="110" selection-start-line="110" selection-end-line="110" />
+          <folding>
+            <element signature="e#83#95#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Stochastic_Oscillator_Final.ipynb">
       <provider selected="true" editor-type-id="jupyter-editor" />
