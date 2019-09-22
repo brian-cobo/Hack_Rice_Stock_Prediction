@@ -1,11 +1,14 @@
 
 import csv
+import datetime
+import nltk
 import os
 import requests
 import re
 
 from bs4 import BeautifulSoup
-
+from nltk.tokenize import sent_tokenize, word_tokenize
+from nltk.corpus import stopwords
 # main url for sec page 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001318605&type=10-Q&dateb=&owner=exclude&count=100'
 tsla_quarterly_reports = ['https://www.sec.gov/Archives/edgar/data/1318605/000156459019026445/tsla-10q_20190630.htm',
            'https://www.sec.gov/Archives/edgar/data/1318605/000156459019013462/tsla-10q_20190331.htm',
@@ -37,11 +40,37 @@ tsla_quarterly_reports = ['https://www.sec.gov/Archives/edgar/data/1318605/00015
 
 class WebScraper:
     def extract_date_from_article(self, words):
-        return words.split('ended ')[1]
+        months = {'january': '01',
+                  'february': '02',
+                  'march': '03',
+                  'april': '04',
+                  'may': '05',
+                  'june': '06',
+                  'july': '07',
+                  'august': '08',
+                  'september': '09',
+                  'october': '10',
+                  'november': '11',
+                  'december': '12'}
+        dates = words.replace(',', '')
+        dates = dates.split('ended ')[1].split()
+        date = f'{dates[-1]}-{months[dates[0]]}-{dates[1]}'
+        return date
+
+    def filter_out_stopwords(self, article):
+        stop_words = set(stopwords.words("english"))
+        filtered_article = []
+        for word in article.split():
+            if word not in stop_words:
+                filtered_article.append(word)
+        return " ".join(filtered_article)
+
 
     def clean_article(self, article):
+        article = re.sub('[^A-z ]', '', article).lower()
         article = " ".join(article.split())  # Remove extra white spaces
-
+        article = self.filter_out_stopwords(article)
+        return article
 
     def find_article_content(self, soup):
         """Finds Article by looking for P tags in HTML"""
@@ -51,26 +80,20 @@ class WebScraper:
         for i in tag:
             if 'for the quarterly period ended' in i.get_text().lower():
                 date = self.extract_date_from_article(i.get_text().lower())
-            article += (i.get_text())
+            article += (' ' + i.get_text())
         article = self.clean_article(article)
-        return date, [article]
+        return date, article
 
     def scrape_article_from_web(self, article_URL):
         """Given a url, it calls out to other functions to extract article info
            and returns the info """
         try:
+            article_extracted_info = {}
+            print('Analyzing', article_URL)
             page = requests.get(article_URL)
             soup = BeautifulSoup(page.content, 'html.parser')
             date, article_content = self.find_article_content(soup)
-            print(date)
-            print(article_content)
-            # article_extracted_info = {'URL': str(article_URL),
-            #                           'Title': title,
-            #                           'Author': author,
-            #                           'Date_Published': date_published,
-            #                           'Time_Published': time_published,
-            #                           'Article': article_content}
-            #return (article_extracted_info)
+            return date, article_content
         except Exception as e:
             print(e)
 
@@ -86,23 +109,20 @@ class WebScraper:
 
         for URL in search_URLs:
             try:
-                articleInfo = self.scrape_article_from_web(URL)
-                #  self.write_dict_to_csv(allArticles, fileName)
+                date, article_content = self.scrape_article_from_web(URL)
+                allArticles[date] = article_content
+                self.write_dict_to_csv(allArticles, fileName)
             except Exception as e:
                 self.write_dict_to_csv(allArticles, fileName)
                 print(f'Error loading info from page {URL}:', e)
-            print('Finished Creating', fileName, 'for page', URL, '\n')
+        print('Finished Creating', fileName, 'for page', URL, '\n')
 
     def write_dict_to_csv(self, articleInfo, fileName):
         with open(fileName, 'w') as csv_file:
             writer = csv.writer(csv_file)
-            writer.writerow(('URL', 'Title', 'Author',
-                             'Date_Published', 'Time_Published',
-                             'Article'))
+            writer.writerow(('Date', 'Article'))
             for key, value in articleInfo.items():
-                writer.writerow([key, value['Title'], value['Author'],
-                                 value['Date_Published'], value['Time_Published'],
-                                 value['Article']])
+                writer.writerow([key, value])
 
 
 def run_webscraper_program():
