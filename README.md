@@ -1,6 +1,6 @@
 # Hack_Rice_Stock_Prediction
 
-Can you create mathematical and financial intuition based on current event articles, and past movement to predict short term stock movement?
+Can you enhance a Stochastic Oscillator to accurately predict stock movement?
 
 ### Prerequisites
     pip install bs4
@@ -8,7 +8,6 @@ Can you create mathematical and financial intuition based on current event artic
     pip install matplotlib
     pip install numpy
     pip install pandas
-    pip install pytorch
     pip install nltk
     pip install seaborn
     
