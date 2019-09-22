@@ -1,7 +1,5 @@
 
 import csv
-import datetime
-import nltk
 import os
 import requests
 import re
