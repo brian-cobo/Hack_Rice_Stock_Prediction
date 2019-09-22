@@ -84,22 +84,19 @@ class WebScraper:
                 date = self.extract_date_from_article(i.get_text().lower())
             article += (' ' + i.get_text())
         article = self.clean_article(article)
-
         article_info = parser(article, lm)
-        print(article_info)
 
-        return date, article #, article_info
+        return date, article_info
 
     def scrape_article_from_web(self, article_URL, lm):
         """Given a url, it calls out to other functions to extract article info
            and returns the info """
         try:
-            article_extracted_info = {}
             print('Analyzing', article_URL)
             page = requests.get(article_URL)
             soup = BeautifulSoup(page.content, 'html.parser')
-            date, article_content = self.find_article_content(soup, lm)
-            return date, article_content
+            date, article_info = self.find_article_content(soup, lm)
+            return date, article_info
         except Exception as e:
             print(e)
 
@@ -119,6 +116,8 @@ class WebScraper:
             try:
                 date, article_content = self.scrape_article_from_web(URL, lm)
                 allArticles[date] = article_content
+                print(allArticles)
+
                 self.write_dict_to_csv(allArticles, fileName)
             except Exception as e:
                 self.write_dict_to_csv(allArticles, fileName)
