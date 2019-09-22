@@ -3,11 +3,13 @@ import csv
 import os
 import requests
 import re
-import Load_MasterDictionary as LM
 
 from Sentiment_Analyzer import parser
 from bs4 import BeautifulSoup
 from nltk.corpus import stopwords
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from nltk.tokenize import sent_tokenize, word_tokenize
+
 
 # main url for SEC page 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001318605&type=10-Q&dateb=&owner=exclude&count=100'
 tsla_quarterly_reports = ['https://www.sec.gov/Archives/edgar/data/1318605/000156459019026445/tsla-10q_20190630.htm',
@@ -67,12 +69,12 @@ class WebScraper:
 
 
     def clean_article(self, article):
-        article = re.sub('[^A-z ]', '', article).lower()
+        article = re.sub('[^A-z .]', '', article).lower()
         article = " ".join(article.split())  # Remove extra white spaces
         article = self.filter_out_stopwords(article)
         return article
 
-    def find_article_content(self, soup, lm):
+    def find_article_content(self, soup):
         """Finds Article by looking for P tags in HTML"""
         date = None
         tag = soup.find_all('p')
@@ -82,27 +84,32 @@ class WebScraper:
                 date = self.extract_date_from_article(i.get_text().lower())
             article += (' ' + i.get_text())
         article = self.clean_article(article)
-        article_info = parser(article, lm)
 
-        return date, article_info
+        analyzer = SentimentIntensityAnalyzer()
+        tokenized_sentence = sent_tokenize(article)
+        #article_average = []
+        for sentence in tokenized_sentence:
+            results = analyzer.polarity_scores(sentence)
+        #     article_average.append(results['compound'])
+        # article_average = float(round((sum(article_average) / len(article_average)), 2))
 
-    def scrape_article_from_web(self, article_URL, lm):
+        return date, results
+
+    def scrape_article_from_web(self, article_URL):
         """Given a url, it calls out to other functions to extract article info
            and returns the info """
         try:
             print('Analyzing', article_URL)
             page = requests.get(article_URL)
             soup = BeautifulSoup(page.content, 'html.parser')
-            date, article_info = self.find_article_content(soup, lm)
-            return date, article_info
+            date, article_average = self.find_article_content(soup)
+            return date, article_average
         except Exception as e:
             print(e)
 
     def find_articles_from_search_URL(self, search_URLs):
         """Given a search URL, it finds all the article URLs and sends them to get extracted"""
         allArticles = {}
-        MASTER_DICTIONARY_FILE = 'LoughranMcDonald_MasterDictionary_2018.csv'
-        lm = LM.load_masterdictionary(MASTER_DICTIONARY_FILE, True)
 
         path = (f'{os.getcwd()}/QuarterlyReports/')
         fileName = path + 'TSLA_Quarterly_Reports.csv'
@@ -112,10 +119,8 @@ class WebScraper:
 
         for URL in search_URLs:
             try:
-                date, article_content = self.scrape_article_from_web(URL, lm)
-                allArticles[date] = article_content
-                print(allArticles)
-
+                date, article_average = self.scrape_article_from_web(URL)
+                allArticles[date] = article_average
                 self.write_dict_to_csv(allArticles, fileName)
             except Exception as e:
                 self.write_dict_to_csv(allArticles, fileName)

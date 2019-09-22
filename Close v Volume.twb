@@ -1,0 +1,1214 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20193.19.0821.2225                               -->
+<workbook original-version='18.1' source-build='2019.3.0 (20193.19.0821.2225)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='TSLA_Stochastic_Oscillator_Dataframe' inline='true' name='federated.08kb8n200njddt15p0flb1xz5o9n' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='TSLA_Stochastic_Oscillator_Dataframe' name='textscan.0rxkghw0supzqn18wqfwj1mv1rzb'>
+            <connection class='textscan' directory='/Users/brian/Desktop/Hack_Rice_Stock_Prediction' filename='TSLA_Stochastic_Oscillator_Dataframe.csv' password='' port='0' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0rxkghw0supzqn18wqfwj1mv1rzb' name='TSLA_Stochastic_Oscillator_Dataframe.csv' table='[TSLA_Stochastic_Oscillator_Dataframe#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='date' name='Date' ordinal='1' />
+            <column datatype='real' name='Open' ordinal='2' />
+            <column datatype='real' name='High' ordinal='3' />
+            <column datatype='real' name='Low' ordinal='4' />
+            <column datatype='real' name='Close' ordinal='5' />
+            <column datatype='real' name='Adj Close' ordinal='6' />
+            <column datatype='integer' name='Volume' ordinal='7' />
+            <column datatype='integer' name='Outlier' ordinal='8' />
+            <column datatype='integer' name='Prediction' ordinal='9' />
+            <column datatype='real' name='L14' ordinal='10' />
+            <column datatype='real' name='H14' ordinal='11' />
+            <column datatype='real' name='%K' ordinal='12' />
+            <column datatype='real' name='%D' ordinal='13' />
+            <column datatype='boolean' name='Sell Entry' ordinal='14' />
+            <column datatype='boolean' name='Sell Exit' ordinal='15' />
+            <column datatype='real' name='Short' ordinal='16' />
+            <column datatype='boolean' name='Buy Entry' ordinal='17' />
+            <column datatype='boolean' name='Buy Exit' ordinal='18' />
+            <column datatype='real' name='Long' ordinal='19' />
+            <column datatype='real' name='Position' ordinal='20' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Open</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Open]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Open</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>High</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[High]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>High</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Low</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Low]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Low</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Close</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Close]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Close</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Adj Close</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Adj Close]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Adj Close</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Volume</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Volume]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Volume</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Outlier</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Outlier]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Outlier</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Prediction</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Prediction]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Prediction</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>L14</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[L14]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>L14</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>H14</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[H14]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>H14</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>%K</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[%K]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>%K</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>%D</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[%D]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>%D</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sell Entry</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[Sell Entry]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Sell Entry</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sell Exit</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[Sell Exit]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Sell Exit</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Short</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Short]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Short</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Buy Entry</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[Buy Entry]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Buy Entry</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Buy Exit</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[Buy Exit]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Buy Exit</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Long</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Long]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Long</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Position</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Position]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Position</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <column datatype='real' name='[Close]' role='measure' type='quantitative' />
+      <column aggregation='Avg' datatype='real' name='[Long]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='integer' name='[Volume]' role='measure' type='quantitative' />
+      <column-instance column='[Close]' derivation='Avg' name='[avg:Close:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Volume]' derivation='Avg' name='[avg:Volume:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Close]' derivation='Count' name='[cnt:Close:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Close]' derivation='Sum' name='[sum:Close:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Volume]' derivation='Sum' name='[sum:Volume:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Volume]' derivation='Var' name='[var:Volume:qk]' pivot='key' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.245283' measure-ordering='alphabetic' measure-percentage='0.754717' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.08kb8n200njddt15p0flb1xz5o9n].[avg:Close:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.08kb8n200njddt15p0flb1xz5o9n].[cnt:Close:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.08kb8n200njddt15p0flb1xz5o9n].[sum:Close:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.08kb8n200njddt15p0flb1xz5o9n].[avg:Volume:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.08kb8n200njddt15p0flb1xz5o9n].[sum:Volume:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.08kb8n200njddt15p0flb1xz5o9n].[var:Volume:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='TSLA_Stochastic_Oscillator_Dataframe (2)' inline='true' name='federated.0piteom07v4ltj1570fd20s01g2u' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='TSLA_Stochastic_Oscillator_Dataframe' name='textscan.1o0j6x410zh4k0155rx3q1i49wap'>
+            <connection class='textscan' directory='/Users/brian/Desktop/Hack_Rice_Stock_Prediction' filename='TSLA_Stochastic_Oscillator_Dataframe.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1o0j6x410zh4k0155rx3q1i49wap' name='TSLA_Stochastic_Oscillator_Dataframe.csv' table='[TSLA_Stochastic_Oscillator_Dataframe#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='date' name='Date' ordinal='1' />
+            <column datatype='real' name='Open' ordinal='2' />
+            <column datatype='real' name='High' ordinal='3' />
+            <column datatype='real' name='Low' ordinal='4' />
+            <column datatype='real' name='Close' ordinal='5' />
+            <column datatype='real' name='Adj Close' ordinal='6' />
+            <column datatype='integer' name='Volume' ordinal='7' />
+            <column datatype='integer' name='Outlier' ordinal='8' />
+            <column datatype='integer' name='Prediction' ordinal='9' />
+            <column datatype='real' name='L14' ordinal='10' />
+            <column datatype='real' name='H14' ordinal='11' />
+            <column datatype='real' name='%K' ordinal='12' />
+            <column datatype='real' name='%D' ordinal='13' />
+            <column datatype='boolean' name='Sell Entry' ordinal='14' />
+            <column datatype='boolean' name='Sell Exit' ordinal='15' />
+            <column datatype='real' name='Short' ordinal='16' />
+            <column datatype='boolean' name='Buy Entry' ordinal='17' />
+            <column datatype='boolean' name='Buy Exit' ordinal='18' />
+            <column datatype='real' name='Long' ordinal='19' />
+            <column datatype='real' name='Position' ordinal='20' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Open</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Open]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Open</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>High</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[High]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>High</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Low</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Low]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Low</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Close</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Close]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Close</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Adj Close</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Adj Close]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Adj Close</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Volume</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Volume]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Volume</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Outlier</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Outlier]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Outlier</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Prediction</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Prediction]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Prediction</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>L14</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[L14]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>L14</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>H14</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[H14]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>H14</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>%K</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[%K]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>%K</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>%D</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[%D]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>%D</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sell Entry</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[Sell Entry]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Sell Entry</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sell Exit</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[Sell Exit]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Sell Exit</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Short</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Short]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Short</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Buy Entry</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[Buy Entry]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Buy Entry</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Buy Exit</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[Buy Exit]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Buy Exit</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Long</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Long]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Long</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Position</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Position]</local-name>
+            <parent-name>[TSLA_Stochastic_Oscillator_Dataframe.csv]</parent-name>
+            <remote-alias>Position</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <column aggregation='Avg' datatype='real' name='[Long]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.264151' measure-ordering='alphabetic' measure-percentage='0.735849' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' italic='true'>TSLA Close v Volume</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='TSLA_Stochastic_Oscillator_Dataframe' name='federated.08kb8n200njddt15p0flb1xz5o9n' />
+          </datasources>
+          <datasource-dependencies datasource='federated.08kb8n200njddt15p0flb1xz5o9n'>
+            <column datatype='real' name='[Close]' role='measure' type='quantitative' />
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Volume]' role='measure' type='quantitative' />
+            <column-instance column='[Close]' derivation='Avg' name='[avg:Close:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Volume]' derivation='Avg' name='[avg:Volume:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Year-Trunc' name='[tyr:Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.08kb8n200njddt15p0flb1xz5o9n].[avg:Volume:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.08kb8n200njddt15p0flb1xz5o9n].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.08kb8n200njddt15p0flb1xz5o9n].[avg:Close:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.08kb8n200njddt15p0flb1xz5o9n].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.08kb8n200njddt15p0flb1xz5o9n].[avg:Volume:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.08kb8n200njddt15p0flb1xz5o9n].[:Measure Names]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.08kb8n200njddt15p0flb1xz5o9n].[avg:Close:qk] + [federated.08kb8n200njddt15p0flb1xz5o9n].[avg:Volume:qk])</rows>
+        <cols>[federated.08kb8n200njddt15p0flb1xz5o9n].[tyr:Date:qk]</cols>
+      </table>
+      <simple-id uuid='{65FD6133-77DB-4037-9A20-3344B29C5B58}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='51'>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.08kb8n200njddt15p0flb1xz5o9n].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.08kb8n200njddt15p0flb1xz5o9n].[:Measure Names]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{4FCEF0CE-AF18-492A-A40C-DCA595D30B82}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='384' name='Sheet 2' width='384'>
+      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
+      TW5ubir2uro66urqUvEN/T/vvfcehw8fxu12j2pmZLkCuEY0GmXbtm0sWrSINWvWUFNTw6VL
+      lwgGg2zZsoU1a9Ywbdo0Nm3aBEBDQwM///nPqa2tpaenB0i+IRs3bqSyspJHH32Ut956i0gk
+      MiHxnzx5kkuXLrFq1SoWL17M22+/TSKR4MiRIzQ2NvLss8/S1NTEoUOHANi9ezfvvPMOR48e
+      TZURDAZ59dVXqamp4fLlyxMSN8CBAwfo6enhscceY8GCBbz55psAfPzxx4TDYZ555hlOnDjB
+      2bNnAfjDH/7A0aNHuXr1KpDc71u3biU/P5+1a9ditVrZuXPnhMTe1dXFnj17WLx4MY8++ih7
+      9+6lra2N5uZmdu3axTe/+U1yc3PZvHkzAKdPn+bVV1/lzJkzhMNhIDlQKR6P8/jjj7NmzRp2
+      795NS0vLuMc+dDJcvnw5Dz30EB988AHBYJD6+npqampYt24dSil27NgBwOHDh3n99dc5efIk
+      sVhsWFlHjhyhrq6OxsbGcY97yN69e4nFYjz++ONUVlamjpuPPvoIm83GU089xd69e2lqagLg
+      rbfeYvfu3Zw4cSJVRl9fHy0tLdx3333cd999zJ49e0Ji3759O3a7nbVr11JaWso777yDUorN
+      mzeTn5/PE088wbZt2+jq6iIej/P666/z6aefpj4DAG1tbWzdupXHHnuMp59+mszMzFHFIAng
+      Gna7neeee47p06eTm5uL3+8nGo1y+vRp7r77bnJzc1m4cCF9fX1EIhF8Ph/f//73qaysTNXU
+      QqEQSinmzJmD3++nqqqKc+fOTUj8lZWVrFmzBp/PR3Fxcaq2efToUVavXo3L5WL58uWcPXsW
+      pRRVVVV873vfw+v1pspwOp089dRTPPjggxPazfXOO+9k1apV5OTkMG3atNRw9traWh566CHc
+      bjcrVqygtrYWgK997WssW7YsFaOmaaxdu5YFCxbg8XiYNm0aAwMDExK71+tl/fr1FBcX4/f7
+      yc7OJhaLUVtby9KlS8nKyuLee++lpaWFaDRKSUkJP/jBDygrK0uV4XQ6uf/++/F4PGRlZZGZ
+      mTkhU7EUFxfz1FNPkZ+fT0FBAS6Xi0QiwfHjx1mxYgVut5tly5bR0NBAIpGgvLycF154gYKC
+      gmHl9Pb2cuzYMe6///5xj/laS5YsYfny5WRnZ1NWVkY8HkcpxcWLF1myZAlZWVksX76cY8eO
+      AbBixQq+/e1vD+tW2drayrRp0wgEAgQCgdQV0HhbuXIlixcvxuPxMH36dAYGBkgkEnR2dnLn
+      nXfi9XpZvHgxp06dwmKx8Oijj/Lkk08O60p8+PBhHnzwQbxeLy6XK9ViMVLp2zl2HAwNux+6
+      fAyFQpSXl/PRRx/xla98JbVNTk4OoVDous0jvb295OXlpU5M+fn5dHZ2Tkj8QyNTu7u7eeed
+      d1i4cCFWq5VEIpGqGbjd7lTN7XqXina7HbvdPuFrLA+NjGxvb+ftt99m2bJlmKYJQEZGBgA5
+      OTn09fUBydhbW1tTr9c0DZvNhmma1NbWUl1dzbPPPjshsQ+dTMLhMB9++CEOh4Pi4mIOHjyY
+      qk3quo7H4yESiQxLuNdqa2vjk08+4dKlSyxYsICioqJxj32oCScUCrF161aKiorIyckZFqfN
+      ZsNmsxGPx68bu2EYbN26lVWrVk1Y0h0ydNw0Njby7rvvsnr16tS0CUOjeQOBAEeOHAHA5/P9
+      URmhUIj6+no6OjrIyspi2bJl477C4NBoYKUU9fX1bNu2jW984xvE43EcDkfqfcnPz+fIkSPo
+      uk5eXl7q+B/S0tJCZ2cn+/fvJ5FIsGLFitS5aiQkAVxDKUUoFGLDhg2Ul5ezbt261OCdoZMR
+      JNsMv2hAz1Cte8jQ/C8TQSnF+fPnef/991m1ahWzZs0a9ruhx8k4gE0pxcmTJ6murmbNmjWU
+      lZWhlEp9aZp2w/0Oyfdl69atdHd389xzz+HxeCYs9q6uLjZs2MDChQu59957U5WJa4+FPxV/
+      VlYW8+bNIzs7m/r6eu66665x/x+GllTduHEjS5YsYdGiRWialmpzvtYXHTe1tbXYbDZ8Ph/1
+      9fXEYjFisdi4TndwbfyHDh3i4MGDrF27lqKiotTV47XHzY0GUs2fP5+KigpM0+TixYu8+eab
+      /PCHPxz32E3TZO/evZw9e5ZnnnmGQCBAJBIZVey6rnPfffdRXFxMT08PGzdu5C/+4i9GPHBM
+      EsA1lFJs2LCBe+65hwULFqSe9/v9XLlyhVmzZmEYBl1dXV/4wfR6vbS2tqY+7FeuXKGiomJC
+      4u/q6uK9997jO9/5zrDafUZGBl1dXeTn59PT04PT6ZyQeEajubmZnTt38vzzz6f27VCtPhgM
+      kp2dTVtb2xfud6UUu3btIpFIsH79+nEbOXk9sViMDRs2sHr1asrLy1PP5+Tk0NzcTGlpKYlE
+      glAolLqauZ6MjAwqKiqoqKjAbrdTW1vL4sWLxzX2/v5+NmzYwNNPPz3sisPj8dDW1kZubi6R
+      SOSGs2n29fWRSCTYvHkzPT09hEIh8vPzufvuu8c1doBz585x+PBhnn/++dS+vfaKzO1209jY
+      eN2a/7WGOktUVVVRXV09rjEDqabZixcv8md/9mepGr/NZkslUIfDweXLl2/YEcPn8xGLxXA6
+      neTn5+NwOEY18Z30ArpGV1cXu3fvpry8nJaWFlpaWnA6nRQUFPDBBx/gcrk4cuQIHo+HOXPm
+      0NTUxKVLlzh37lzqJp7f7+fy5cup9RSOHz/OypUrJ+SEdODAAaLRKE6nMxV/IBAgMzOTbdu2
+      4fF42L59O/feey+5ubmcP3+e5ubmVI+hcDiMpmnU19dz5coVmpqasNlsOJ3OcZ98a9euXWRk
+      ZKBpGi0tLbS3txMIBLBarezevZuMjAy2b9/O8uXLyczMpK6ujoaGBtra2tB1HYfDwfvvv8/s
+      2bPp6upKtbdnZ2eP+xVPY2Mjx48fp6ioKLXfMzMz8fl8bN26lezsbD7++GOmTZtGeXk5ly9f
+      5sqVK5w9exZd14lGo7S3t7Nv3z6UUrS3t7N//36++tWvkp2dPa6xnz59mqtXr5Kbm5uK3ev1
+      kpOTk4p9165dzJ07l5KSEhoaGrh69SqnTp3C5XIRiUSoqqpi/vz5VFVV4fF4cLlcLFu2bFzj
+      HvLhhx+Sl5dHPB6npaWF7u5ufD4f0WiUw4cPY7FY2LlzJ4888gg2m43Tp0/T1taWOuZN0+TT
+      Tz/lwoULqR5FLpeLuXPnjnvsW7ZsoaysLHUTOhQK4fP56OzspK6ujng8zr59+1i9ejWmaXLm
+      zBlaWlqoq6sjMzMTXdcpLCxky5YteL1ezp49SyQSYeHChSM+5iUBXMM0TbKyslLTtRqGgdfr
+      JTs7m4qKCs6fP09ubi73338/uq7T2dmZOuCGuvIFAgEqKyvp7OwkGAzyyCOPpLqHjjer1YrD
+      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
+      P8B0+dSe4WpBAAAAAElFTkSuQmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>
